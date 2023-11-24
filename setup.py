@@ -1,21 +1,9 @@
 #! /usr/bin/env python
-from distutils.core import setup
-from setuptools import find_packages
-import sys
-
-# python2 and python3 support
-try:
-    reload
-except NameError:
-    # py3k has unicode by default
-    pass
-else:
-    reload(sys).setdefaultencoding('utf-8')
-
+from setuptools import find_packages, setup
 
 setup(
     name='django-tabbed-admin',
-    version='1.0.4',
+    use_scm_version=True,
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='Easily add tabs to django admin forms.',
