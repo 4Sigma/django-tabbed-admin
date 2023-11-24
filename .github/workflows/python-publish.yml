@@ -20,11 +20,12 @@ jobs:
     name: upload release to PyPI
     runs-on: ubuntu-latest
     # Specifying a GitHub environment is optional, but strongly encouraged
-    environment: pypi
+    environment:
+      name: pypi
+      url: https://pypi.org/p/django-tabbed-admin2
     permissions:
       # IMPORTANT: this permission is mandatory for trusted publishing
       id-token: write
-      contents: write
     steps:
       - uses: actions/checkout@v2
         with:
@@ -49,3 +50,5 @@ jobs:
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          verbose: true
