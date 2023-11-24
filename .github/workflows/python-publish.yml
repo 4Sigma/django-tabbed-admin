@@ -14,13 +14,14 @@ on:
 
 jobs:
   pypi-publish:
-    name: Upload release to PyPI
+
+    name: upload release to PyPI
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/project/django-tabbed-admin2/
+    # Specifying a GitHub environment is optional, but strongly encouraged
+    environment: pypi
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
     steps:
       - uses: actions/checkout@v2
         with:
@@ -41,7 +42,6 @@ jobs:
           python setup.py --version
           python setup.py sdist --format=gztar bdist_wheel
           twine check dist/*
-
 
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
