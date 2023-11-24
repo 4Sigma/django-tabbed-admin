@@ -8,9 +8,11 @@
 
 name: Upload Python Package
 
-on:
-  release:
-    types: [published]
+# on:
+#   release:
+#     types: [published]
+
+on: push
 
 jobs:
   pypi-publish:
@@ -22,6 +24,7 @@ jobs:
     permissions:
       # IMPORTANT: this permission is mandatory for trusted publishing
       id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v2
         with:
