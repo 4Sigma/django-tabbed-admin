@@ -3,7 +3,8 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-tabbed-admin',
-    use_scm_version=True,
+    # use_scm_version=True,
+    version='1.0.8',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='Easily add tabs to django admin forms.',
