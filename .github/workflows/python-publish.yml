@@ -8,11 +8,12 @@
 
 name: Upload Python Package
 
-# on:
-#   release:
-#     types: [published]
+on:
+  release:
+    types: [published]
 
-on: push
+# Enable for debug (Disable poetry get version from tag)
+# on: push
 
 jobs:
   pypi-publish:
@@ -43,6 +44,7 @@ jobs:
 
       - name: Build package
         run: |
+          $ poetry self add poetry-version-plugin
           poetry build
           twine check dist/*
 
