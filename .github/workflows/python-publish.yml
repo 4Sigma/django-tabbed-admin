@@ -44,7 +44,7 @@ jobs:
 
       - name: Build package
         run: |
-          $ poetry self add poetry-version-plugin
+          poetry self add poetry-version-plugin
           poetry build
           twine check dist/*
 
