@@ -43,8 +43,8 @@ jobs:
 
       - name: Build package
         run: |
-          - poetry build
-          - twine check dist/*
+          poetry build
+          twine check dist/*
 
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
