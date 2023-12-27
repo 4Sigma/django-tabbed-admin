@@ -39,11 +39,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U pip
-          python -m pip install -U poetry
+          python -m pip install -U poetry twine
 
       - name: Build package
         run: |
-          poetry build
+          - poetry build
+          - twine check dist/*
 
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
