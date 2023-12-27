@@ -1,3 +1,5 @@
-The primary author of gipsy_tabbed_admin is Guillaume Pousseo 
-
+The primary author of gipsy_tabbed_admin is Guillaume Pousseo
 email: guillaumepousseo@revsquare.com
+
+The secondary author of gipsy_tabbed_admin is 4Sigma
+email: devops@4sigma.it
