@@ -1,6 +1,6 @@
 # Django Tabbed Admin2
 
-This is a fork of the old Django tabbed admin, available at [omji/django-tabbed-admin](https://github.com/omji/django-tabbed-admin).
+This is a fork of the old Django tabbed admin, available at [4Sigma/django-tabbed-admin](https://github.com/4Sigma/django-tabbed-admin).
 
 ## Installation
 
@@ -15,7 +15,7 @@ pip install django_tabbed_admin2
 ### From GitHub
 
 ```shell-session
-https://github.com/omji/django-tabbed-admin#egg=tabbed_admin
+https://github.com/4Sigma/django-tabbed-admin.git
 ```
 
 ## Setup
@@ -37,6 +37,19 @@ To activate the Jquery UI statics, add the following line to the project setting
 ```python
 TABBED_ADMIN_USE_JQUERY_UI = True
 ```
+
+## Migrate from original Django Tabbed Admin
+
+For migrate from the original Django Tabbed Admin, you need to change the import of the `TabbedModelAdmin` class from the `tabbed_admin` module to the `django_tabbed_admin2` module.
+
+```sed
+find ./ -not -path '*/[@.]*' -name "admin.py" -exec sed -i 's/from tabbed_admin import TabbedModelAdmin/from django_tabbed_admin2 import TabbedModelAdmin/g' {} \;
+```
+
+or using find and replace in your favorite editor.
+
+find: `from tabbed_admin import TabbedModelAdmin`  
+replace: `from django_tabbed_admin2 import TabbedModelAdmin`
 
 ## Configure Admin Tabs
 
